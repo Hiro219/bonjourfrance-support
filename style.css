@@ -1,0 +1,50 @@
+/* アプリ本体と同じ配色（生成りの紙・紺のインク・看板の赤・空の青）。ライト／ダーク両方を定義する。 */
+:root {
+  --bg: #fbf4e6; --surface: #fffaf0; --ink: #2b3a4a; --ink-sub: #5a6b7c;
+  --accent: #c0483e; --blue: #2f5d88; --line: #2b3a4a1f; --link: #2f5d88;
+  --band: linear-gradient(135deg, #f3e3c6, #dbe9f6);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c2633; --surface: #263445; --ink: #fbf4e6; --ink-sub: #c9d3dd;
+    --accent: #e8836f; --blue: #9cc2e8; --line: #ffffff1c; --link: #f2c75c;
+    --band: linear-gradient(135deg, #2c3b58, #4a3a52);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 0 20px 80px;
+  background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.9; font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 720px; margin: 0 auto; }
+header { padding: 56px 0 28px; border-bottom: 2px solid var(--line); margin-bottom: 32px; }
+header .eyebrow {
+  color: var(--accent); font-family: Didot, "Bodoni 72", Georgia, serif; font-style: italic;
+  font-size: 20px; margin: 0 0 4px;
+}
+.tricolor { display: flex; gap: 6px; margin: 0 0 14px; }
+.tricolor span { width: 28px; height: 6px; border-radius: 3px; }
+.tricolor span:nth-child(1) { background: #2f5d88; }
+.tricolor span:nth-child(2) { background: #ffffff; outline: 1px solid var(--line); }
+.tricolor span:nth-child(3) { background: #c0483e; }
+h1 { font-size: 28px; margin: 0 0 8px; line-height: 1.4; font-weight: 800; }
+h2 { font-size: 19px; margin: 40px 0 12px; padding-top: 8px; font-weight: 800; }
+h3 { font-size: 16px; margin: 28px 0 6px; }
+p, li { color: var(--ink-sub); }
+strong { color: var(--ink); }
+ul { padding-left: 1.2em; }
+a { color: var(--link); }
+.updated { font-size: 13px; color: var(--ink-sub); margin: 0; }
+.card {
+  background: var(--surface); border: 2px solid var(--line);
+  border-radius: 18px; padding: 18px 20px; margin: 24px 0;
+}
+.hero { background: var(--band); border: none; }
+.hero p { color: var(--ink); }
+.mail { font-size: 18px; font-weight: 700; }
+nav { margin: 40px 0 0; padding-top: 24px; border-top: 2px solid var(--line); font-size: 14px; }
+nav a { margin-right: 20px; }
+footer { margin-top: 48px; font-size: 13px; color: var(--ink-sub); }
